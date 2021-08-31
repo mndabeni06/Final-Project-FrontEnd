@@ -6,6 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/register.css">
     <title>Registration</title>
+    <div class="topnav">
+        <div class="topsidenav">
+        </div>
+          <a class="active" href="#slideshow-container">Home</a>
+          <a href="/index.html">About</a>
+          <a href="/index.html">Add Player Profile</a>
+          <a href="/index.html">Members</a>
+          <a href="/index.html">Contact Us</a>
+        </div> 
 </head>
 <body>
     <div class="container">
@@ -14,15 +23,22 @@
                 <div class="card-front">
                     <h2>Register</h2>
                     <form >
-                        <input type="text" class="input-box" placeholder="first_name" required>
-                        <input type="text" class="input-box" placeholder="last_name" required>
-                        <input type="text" class="input-box" placeholder="username" required>
-                        <input type="text" class="input-box" placeholder="home_address" required>
-                        <input type="password" class="input-box" placeholder="password" required>
-                        <input type="contact_number" class="input-box" placeholder="contact_number" required>
-                        <a href="/login.html">
-                        <button type="submit" class="submit-btn">Submit</button>
-                    </a>
+                        <input name="first_name" id="first_name" type="text" class="input-box" placeholder="First Name" required>
+                        <input name="last_name" id="last_name" type="text" class="input-box" placeholder="Last Name" required>
+                        <input name="email" id="email" type="email"  class="input-box" placeholder="Email" required>
+                        <input name="username" id="username" type="text" class="input-box" placeholder="Username" required>
+                        <input name="password" id="password" type="password" class="input-box" placeholder="Password" required>
+                        <input name="home_address" id="home_address" type="text" class="input-box" placeholder="Home Address" required>
+                        <input name="contact_number" id="contact_number" type="contact_number" class="input-box" placeholder="Contact Number" required>
+
+
+                        <button
+                        class="button"
+                        onclick="event.preventDefault(), registerPlayer()"
+                        type="submit"
+                      >
+                        Register
+                      </button>                    
                     </form>
             
                    
@@ -30,6 +46,6 @@
             </div>
         </div>
     </div>
-    
+    <script src="/register.js"></script>
 </body>
 </html>
