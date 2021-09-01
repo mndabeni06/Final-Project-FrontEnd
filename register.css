@@ -127,7 +127,7 @@ span{
 }
 
 
-topnav input[type=text] {
+.topnav input[type=text] {
     float: right;
     padding: 6px;
     border: none;
