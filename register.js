@@ -1,5 +1,5 @@
 // function to register player
-function registerPlayer() {
+/*function registerPlayer() {
 
   let details = {
     first_name: document.getElementById("first_name").value,
@@ -31,4 +31,4 @@ function registerPlayer() {
           
         }
       });
-  }
+  }*/

@@ -23,7 +23,7 @@
                 <div class="card-front">
                     <h2>Register</h2>
                     <form >
-                        <input name="first_name" id="first_name" type="text" class="input-box" placeholder="First Name" required>
+                        <input name="first_name" id="first_name" type="text" class="input-box" placeholder="First Name" required="">
                         <input name="last_name" id="last_name" type="text" class="input-box" placeholder="Last Name" required>
                         <input name="email" id="email" type="email"  class="input-box" placeholder="Email" required>
                         <input name="username" id="username" type="text" class="input-box" placeholder="Username" required>
@@ -31,14 +31,14 @@
                         <input name="home_address" id="home_address" type="text" class="input-box" placeholder="Home Address" required>
                         <input name="contact_number" id="contact_number" type="contact_number" class="input-box" placeholder="Contact Number" required>
 
-
+                        <a href="/login.html">
                         <button
                         class="button"
-                        onclick="event.preventDefault(), registerPlayer()"
-                        type="submit"
+                        type="button"
                       >
                         Register
-                      </button>                    
+                      </button>  
+                    </a>
                     </form>
             
                    
@@ -46,6 +46,6 @@
             </div>
         </div>
     </div>
-    <script src="/register.js"></script>
+    <!--<script src="/register.js"></script>-->
 </body>
 </html>
