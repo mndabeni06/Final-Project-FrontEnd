@@ -8,8 +8,6 @@
   <div class="topsidenav">
     <a href="/register.html">Register</a>
     <a href="/login.html">Login</a>
-
-    <input type="text" placeholder="Search..">
   </div>
     <a class="active" href="#slideshow-container">Home</a>
     <a href="#about-section">About</a>
@@ -79,12 +77,46 @@ function showSlides() {
 
      
     </h1>
-    <p class="about-text"> Lorem, ipsum dolor sit amet consectetur adipisicing elit. Possimus non amet maiores at illum ipsum repudiandae natus ipsam perspiciatis voluptates, dignissimos dolore odio, consequuntur fugiat ex cupiditate? Obcaecati, quam officiis?</p>
-      </div>
-     
-    
-     
+    <p class="about-text" style="text-align: justify;
+    text-justify: inter-word;"  > We are commited in showcasing players that do not have the privllege to be seen by elite scouters. This platform gives all players and scouters to engage in a manner which will benefit a soccer player with a dream, and a scouter with a vision. To view player Profiles please click on Player Profiles, and you can be able to add players that you want to engage with. Players that are interested in joining the hub, plaase do not hesitate to contact us here
+     </p>
+     <a href="/add player profile.html">
+     <button  class="contact-Us-btn" type="button">View Profiles</button> 
+    </a>     
+
   </div>
+  </div>
+<!--Contact Us Section-->
+  <div class="container">
+    <div style="text-align:center">
+      <h2>Contact Us</h2>
+      <p>Swing by for a cup of coffee, or leave us a message:</p>
+    </div>
+    <div class="row">
+      <div class="column">
+        <img src="/w3images/map.jpg" style="width:100%">
+      </div>
+      <div class="column">
+        <form action="/action_page.php">
+          <label for="fname">First Name</label>
+          <input type="text" id="fname" name="firstname" placeholder="Your name..">
+          <label for="lname">Last Name</label>
+          <input type="text" id="lname" name="lastname" placeholder="Your last name..">
+          <label for="country">Country</label>
+          <select id="country" name="country">
+            <option value="australia">Australia</option>
+            <option value="canada">Canada</option>
+            <option value="usa">USA</option>
+          </select>
+          <label for="subject">Subject</label>
+          <textarea id="subject" name="subject" placeholder="Write something.." style="height:170px"></textarea>
+          <input type="submit" value="Submit">
+        </form>
+      </div>
+    </div>
+  </div> 
+
+
 
 
 </body>

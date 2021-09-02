@@ -8,11 +8,11 @@ fetch("https://immense-coast-90376.herokuapp.com/player_profiles/")
   .then((data) => {
     console.log(data);
     products = data;
-    showproducts(products);
+    showplayers(products);
   });
 
-//* Show-Products Button*//
-function showproducts(products) {
+//* Show-Players Profiles*//
+function showplayers(products) {
   let product_container = document.querySelector("#players-container");
   product_container.innerHTML = "";
   products.data.forEach((product) => {  
@@ -42,7 +42,7 @@ function renderCart(cartItems) {
   if (cartItems.length > 0) {
     cartItems.map((cartItem) => {
       cartContainer.innerHTML += `
-      <div class = "products">
+      <div class = "players-container">
             <img src="${cartItem.image}" class = "image">
             <div class = "player-content"> 
                 <h5 class = "full-name"> ${cartItem.full_name}</h5>
@@ -51,7 +51,10 @@ function renderCart(cartItems) {
                 <h5 class ="citizenship"> ${cartItem.citizenship}</h5>
                 <h5 class ="place_of_birth"> ${cartItem.place_of_birth}</h5>
                 <h5 class ="current_club"> ${cartItem.current_club}</h5>
-                <button class ="revome_player"  onclick="removePlayer(${cartItem.player_id})">Remove Player</button>     
+                <button class ="contactPlayer"onclick="contactPlayer(${cartItem.player_id})">Contact Player</button>
+                <button class ="revome_player"onclick="removePlayer(${cartItem.player_id})">Remove Player</button>
+                 
+
               </div>
             
         </div>
@@ -68,13 +71,15 @@ function renderCart(cartItems) {
 //* Add to cart functions*//  
 function addPlayer(player_id) {
   let product = products.data.find((item) => {
-    return (item.player_id = player_id);
+    return (item.player_id == player_id);
   });
   console.log(product);
   cart.push(product);
   renderCart(cart);
   console.log("See Cart Items Here: ", cart);
 }
+
+
 
 // Function to toggleCart //
 
@@ -116,14 +121,16 @@ function deleteProfile(id1) {
 
 // Remove Items from Cart //
 function removePlayer(player_id) {
-  let product = products.data.find((item) => {
+  let player = products.data.find((item) => {
     return item.player_id == player_id;
   });
 
   cart.splice(
-    cart.findIndex((a) => a.player_id === product.player_id),
+    cart.findIndex((a) => a.player_id === player.player_id),
     1
   );
   renderCart(cart);
 }
+
+
 
