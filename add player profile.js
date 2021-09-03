@@ -36,7 +36,7 @@ function showplayers(products) {
 }
 
 // Function to render Cart When items are being added// 
-function renderCart(cartItems) {
+function renderTeam(cartItems) {
   cartItems.length > 0;
   let cartContainer = document.querySelector("#cart");
   if (cartItems.length > 0) {
@@ -51,13 +51,39 @@ function renderCart(cartItems) {
                 <h5 class ="citizenship"> ${cartItem.citizenship}</h5>
                 <h5 class ="place_of_birth"> ${cartItem.place_of_birth}</h5>
                 <h5 class ="current_club"> ${cartItem.current_club}</h5>
-                <button class ="contactPlayer"onclick="contactPlayer(${cartItem.player_id})">Contact Player</button>
+                <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Contact Player</button>
                 <button class ="revome_player"onclick="removePlayer(${cartItem.player_id})">Remove Player</button>
                  
 
               </div>
-            
         </div>
+    <div id="id01" class="modal">
+    <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+    <form class="modal-content" action="https://formspree.io/f/xvodrewb"
+    method="post">
+    <div class="container">
+      <h1>Contact Form</h1>
+      <p>Please fill in your details to contact player.</p>
+      <hr>
+      <input type="text" placeholder="Enter Full Name" name="full name" required>
+
+
+      <label for="email"></label>
+      <input type="text" placeholder="Enter email" name="email" required>
+
+      <label for="Subject"><Subject</b></label>
+      <input type="text" placeholder="Enter subject" name="Subject" required>
+
+      <label for="message"><message</b></label>
+      <input type="text" placeholder="Enter message" name="message" required  rows="10" >
+
+
+      <div class="clearfix">
+        <button type="submit" onclick="document.getElementById('id01').style.display='none'" class="sendmesagebtn">Send Message</button>
+      </div>
+    </div>
+  </form>
+</div>
       
       
       `;
@@ -75,7 +101,7 @@ function addPlayer(player_id) {
   });
   console.log(product);
   cart.push(product);
-  renderCart(cart);
+  renderTeam(cart);
   console.log("See Cart Items Here: ", cart);
 }
 
@@ -129,8 +155,7 @@ function removePlayer(player_id) {
     cart.findIndex((a) => a.player_id === player.player_id),
     1
   );
-  renderCart(cart);
+  renderTeam(cart);
 }
-
 
 

@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Create New Profile</title>
+  </head>
+  <body>
+    <h3>Plase Enter Your Details</h3>
+    <form
+      id="contact-form"
+      method="POST"
+    >
+      <!--For the email label-->
+
+      <div class="form-group">
+        <label class="from-labels" for="email">Player_id</label>
+        <input
+          class="form-input"
+          type="text"
+          name="player_id"
+          id="player_id"
+          placeholder="Please Enter Player_id Name"
+          required
+        />
+      </div>
+
+
+
+      <div class="form-group">
+        <label class="from-labels" for="email">Full Name</label>
+        <input
+          class="form-input"
+          type="text"
+          name="full_name"
+          id="full_name"
+          placeholder="Please Enter Full Name"
+          required
+        />
+      </div>
+      <div class="form-group">
+        <label class="from-labels" for="email">Nickname</label>
+        <input
+          class="form-input"
+          type="text"
+          name="nickname"
+          id="nickname"
+          placeholder="Please Enter Nickname"
+          required
+        />
+      </div>
+      <div class="form-group">
+        <label class="from-labels" for="email">D-O-B</label>
+        <input
+          class="form-input"
+          type="textarea"
+          name="date_of_birth"
+          id="date_of_birth"
+          placeholder="Please Enter date-of-birth"
+          required
+        />
+      </div>
+
+      <div class="form-group">
+        <label class="from-labels" for="email">Age</label>
+        <input
+          class="form-input"
+          type="text"
+          name="age"
+          id="age"
+          placeholder="Please Enter Your Age"
+          required
+        />
+      </div>
+
+      <div class="form-group">
+        <label class="from-labels" for="email">Place Of Birth</label>
+        <input
+          class="form-input"
+          type="text"
+          name="place-of-birth"
+          id="place_of_birth"
+          placeholder="Please Enter place-of-birth"
+          required
+        />
+      </div>
+
+      <div class="form-group">
+        <label class="from-labels" for="email">Position</label>
+        <input
+          class="form-input"
+          type="textarea"
+          name="position"
+          id="position"
+          placeholder="Please Enter Your Position"
+          required
+        />
+      </div>
+
+      <div class="form-group">
+        <label class="from-labels" for="email">Current Club</label>
+        <input
+          class="form-input"
+          type="textarea"
+          name="current_club"
+          id="current_club"
+          placeholder="Please Enter Your Current Club"
+          required
+        />
+      </div>
+
+      <div class="form-group"></div>
+      <!--For the contact label-->
+      <div class="form-group">
+        <label class="from-labels" for="contact">Image Url</label>
+        <input
+          class="form-input"
+          type="text"
+          name="image"
+          id="image"
+          placeholder="Enter image url"
+          required
+        />
+      </div>
+
+      <!-- The submit button-->
+
+      <button
+        onclick="event.preventDefault(), createProfile()"
+        class="button"
+        type="submit"
+      >
+        Send
+      </button>
+    </form>
+    <img src="" alt="image-preview" class="imageup" />
+    <script src="/create profile.js"></script>
+  </body>
+</html>
