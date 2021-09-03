@@ -1,36 +1,63 @@
-// function for a new player to create a profile
 const mystorage = window.localStorage;
 
 
-function createProfile() {
-    fetch("https://immense-coast-90376.herokuapp.com/create_profile/", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: `jwt ${mystorage.getItem("jwt-token")}`,
-      },
-      body: JSON.stringify({
-        player_id: document.getElementById("player_id").value,
-        full_name: document.getElementById("full_name").value,
-        nickname: document.getElementById("nickname").value,
-        date_of_birth: document.getElementById("date_of_birth").value,
-        age: document.getElementById("age").value,
-        place_of_birth: document.getElementById("place_of_birth").value,
-        position: document.getElementById("position").value,
-        current_club: document.getElementById("current_club").value,
-        image: document.getElementById("image").value,
-      }),
-    })
-      .then((response) => response.json)
-      .then((data) => {
-        console.log(data);
-        console.log("success");
-        if (data["description"] == "Player Profile create succesfully") {
-          alert("Congragulations you have been added successfuly");
-          window.location.href = "./add player profile.html";
-        } else {
-          alert("did not add!, please make sure the information is correct.");
-          window.location.href = "./add player profle.html";
-        }
-      });
+function createProfile(){
+  document.querySelector('.addprocontainer').classList.toggle('active')
+}
+
+function previewFile() {
+  const image = document.querySelector('.player_image');
+  const file = document.querySelector('#aimage').files[0];
+  const reader = new FileReader();
+
+  reader.addEventListener("load", function () {
+    // convert image file to base64 string
+    image.src = reader.result;
+  }, false);
+
+  if (file) {
+    reader.readAsDataURL(file);
   }
+}
+
+
+
+function createplayerProfile(){
+  let fullname  = document.getElementById("full_name").value
+  let nickname = document.getElementById("nickname").value
+  let date_of_birth  = document.getElementById("date-of-birth").value
+  let age  = document.getElementById("age").value
+  let position  = document.getElementById("position").value
+  let citizenship = document.getElementById("citizenship").value
+  let place_of_birth = document.getElementById("place-of-birth").value
+  let current_club = document.getElementById("current-club").value
+
+
+  let playerimage = document.querySelector('.imageup').src
+
+  if (full_name && nickname && date_of_birth && citizenship && place_of_birth && current_club && playerimage){
+      fetch(`https://immense-coast-90376.herokuapp.com/create_profile/`, {
+          method: 'POST',
+          headers: {
+              'Content-Type' : 'application/json',
+              'Authorization' : `jwt ${mystorage.getItem('jwt-token')}`
+          },
+          body: JSON.stringify({
+              "full_name": fullname,
+              "nickname":nickname,
+              "date-of-birth":date_of_birth,
+              "age": age,
+              "citizenship": citizenship,
+              "position": position,
+              "place_of_birth": place_of_birth,
+              "current_club": current_club,
+              "playerimage": playerimage,
+          }),
+      }).then(response => response.json).then(data => {
+          console.log(data);
+          console.log('success')})
+          .catch(err => alert('Error. Please try again, or log in again'))
+  }else{
+      alert('Please fill in all forms before submitting')
+  }
+}

@@ -1,140 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Create New Profile</title>
-  </head>
-  <body>
-    <h3>Plase Enter Your Details</h3>
-    <form
-      id="contact-form"
-      method="POST"
-    >
-      <!--For the email label-->
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Player profile</title>
+</head>
+<body>
+    <div class="addprocontainer">
+        <div>
+            <i class="fas fa-times exiticon" onclick="createProfile()"></i>
+            <div class="addproform-container">
+                <form class="addproform" method="POST">
+                    <h3>Create Profile</h3>
+                    <table>
+                       
+                        <tr>
+                            <td><input class="linputtext" id="full_name" type ="text" name ="Full_Name" placeholder="Full Name" required></td>
+                        </tr>
+                        <tr>
+                            <td><input class="linputtext" id="nickname" type ="text" name ="nickname" placeholder="Nickname" required></td>
+                        </tr>
+                        <tr>
+                            <td><input class="linputtex" id="date-of-birth" type ="text" name ="date-of-birth" placeholder="date-of-birth" required></td>
+                        </tr>
+                        <tr>
+                            <td><input class="linputtext" id="age" type ="text" name ="age" placeholder="age" required></td>
+                        </tr>
 
-      <div class="form-group">
-        <label class="from-labels" for="email">Player_id</label>
-        <input
-          class="form-input"
-          type="text"
-          name="player_id"
-          id="player_id"
-          placeholder="Please Enter Player_id Name"
-          required
-        />
-      </div>
+                        <tr>
+                          <td><input class="linputtext" id="position" type ="text" name ="position" placeholder="position" required></td>
+                      </tr>
 
+                      <tr>
+                        <td><input class="linputtext" id="citizenship" type ="text" name ="citizenship" placeholder="citizenship" required></td>
+                    </tr>
 
+                    <tr>
+                      <td><input class="linputtext" id="place-of-birth" type ="text" name ="place-of-birth" placeholder="place of birth" required></td>
+                    </tr>
 
-      <div class="form-group">
-        <label class="from-labels" for="email">Full Name</label>
-        <input
-          class="form-input"
-          type="text"
-          name="full_name"
-          id="full_name"
-          placeholder="Please Enter Full Name"
-          required
-        />
-      </div>
-      <div class="form-group">
-        <label class="from-labels" for="email">Nickname</label>
-        <input
-          class="form-input"
-          type="text"
-          name="nickname"
-          id="nickname"
-          placeholder="Please Enter Nickname"
-          required
-        />
-      </div>
-      <div class="form-group">
-        <label class="from-labels" for="email">D-O-B</label>
-        <input
-          class="form-input"
-          type="textarea"
-          name="date_of_birth"
-          id="date_of_birth"
-          placeholder="Please Enter date-of-birth"
-          required
-        />
-      </div>
+                    <tr>
+                      <td><input class="linputtext" id="current-club" type ="text" name ="current-club" placeholder="current club" required></td>
+                    </tr>
 
-      <div class="form-group">
-        <label class="from-labels" for="email">Age</label>
-        <input
-          class="form-input"
-          type="text"
-          name="age"
-          id="age"
-          placeholder="Please Enter Your Age"
-          required
-        />
-      </div>
-
-      <div class="form-group">
-        <label class="from-labels" for="email">Place Of Birth</label>
-        <input
-          class="form-input"
-          type="text"
-          name="place-of-birth"
-          id="place_of_birth"
-          placeholder="Please Enter place-of-birth"
-          required
-        />
-      </div>
-
-      <div class="form-group">
-        <label class="from-labels" for="email">Position</label>
-        <input
-          class="form-input"
-          type="textarea"
-          name="position"
-          id="position"
-          placeholder="Please Enter Your Position"
-          required
-        />
-      </div>
-
-      <div class="form-group">
-        <label class="from-labels" for="email">Current Club</label>
-        <input
-          class="form-input"
-          type="textarea"
-          name="current_club"
-          id="current_club"
-          placeholder="Please Enter Your Current Club"
-          required
-        />
-      </div>
-
-      <div class="form-group"></div>
-      <!--For the contact label-->
-      <div class="form-group">
-        <label class="from-labels" for="contact">Image Url</label>
-        <input
-          class="form-input"
-          type="text"
-          name="image"
-          id="image"
-          placeholder="Enter image url"
-          required
-        />
-      </div>
-
-      <!-- The submit button-->
-
-      <button
-        onclick="event.preventDefault(), createProfile()"
-        class="button"
-        type="submit"
-      >
-        Send
-      </button>
-    </form>
-    <img src="" alt="image-preview" class="imageup" />
+                    
+                  
+                            <td><input class="linputtext" id="player_image" type ="file" name ="player_image" placeholder="Upload Image" onchange="previewFile()" required></td>
+                        </tr>
+                        <tr>
+                            <td><button onclick="event.preventDefault(), createplayerProfile()" class="linputsubmit">Add Profile</button></td>
+                        </tr>
+                    </table>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        
+        <div class="productscontent">
+            <div class="newproduct" onclick="createplayerProfile()">
+                 
+            </div>
+            <div class="productscontainer">
+            </div>
+        </div>
+    </div>
+    <img src="" alt="image-preview" class="imageup">
     <script src="/create profile.js"></script>
-  </body>
+    <script src="https://kit.fontawesome.com/1e2396cf96.js" crossorigin="anonymous"></script>
+</body>
 </html>
