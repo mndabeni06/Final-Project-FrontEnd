@@ -1,63 +1,41 @@
-const mystorage = window.localStorage;
+function addProducts() {
+  fetch('https://lca-pointofsales.herokuapp.com//create_profile/', {
+      method: 'POST',
+      headers: {
+          'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+          product_name: document.getElementById('p_name').value,
+          product_type: document.getElementById('p_type').value,
+          product_price: document.getElementById('p_price').value,
+          product_description: document.getElementById('p_description').value,
+          product_image: document.querySelector('.imgurl').src
 
+      }),
+      mode: 'cors'
+  }).then(res => res.json()).then(data => {
+      console.log(data)
+      console.log("You added a product successfully")
 
-function createProfile(){
-  document.querySelector('.addprocontainer').classList.toggle('active')
+      if (data['message'] == "Player Profile Added Successfully") {
+          alert('You have sucessfully Added A Product! Please View It On The Products Page')
+          window.location.href = './add player profile'
+      } else {
+          alert('Form filled in incorrectly')
+      }
+  })
 }
 
-function previewFile() {
-  const image = document.querySelector('.player_image');
-  const file = document.querySelector('#aimage').files[0];
+function addImage() {
+  const preview = document.querySelector('.imgurl');
+  const file = document.querySelector('input[type=file]').files[0];
   const reader = new FileReader();
 
   reader.addEventListener("load", function () {
-    // convert image file to base64 string
-    image.src = reader.result;
+      preview.src = reader.result;
   }, false);
 
   if (file) {
-    reader.readAsDataURL(file);
-  }
-}
-
-
-
-function createplayerProfile(){
-  let fullname  = document.getElementById("full_name").value
-  let nickname = document.getElementById("nickname").value
-  let date_of_birth  = document.getElementById("date-of-birth").value
-  let age  = document.getElementById("age").value
-  let position  = document.getElementById("position").value
-  let citizenship = document.getElementById("citizenship").value
-  let place_of_birth = document.getElementById("place-of-birth").value
-  let current_club = document.getElementById("current-club").value
-
-
-  let playerimage = document.querySelector('.imageup').src
-
-  if (full_name && nickname && date_of_birth && citizenship && place_of_birth && current_club && playerimage){
-      fetch(`https://immense-coast-90376.herokuapp.com/create_profile/`, {
-          method: 'POST',
-          headers: {
-              'Content-Type' : 'application/json',
-              'Authorization' : `jwt ${mystorage.getItem('jwt-token')}`
-          },
-          body: JSON.stringify({
-              "full_name": fullname,
-              "nickname":nickname,
-              "date-of-birth":date_of_birth,
-              "age": age,
-              "citizenship": citizenship,
-              "position": position,
-              "place_of_birth": place_of_birth,
-              "current_club": current_club,
-              "playerimage": playerimage,
-          }),
-      }).then(response => response.json).then(data => {
-          console.log(data);
-          console.log('success')})
-          .catch(err => alert('Error. Please try again, or log in again'))
-  }else{
-      alert('Please fill in all forms before submitting')
+      reader.readAsDataURL(file);
   }
 }

@@ -4,70 +4,101 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Create Player profile</title>
+    <title>Create Profile</title>
+    <div class="topnav">
+        <div class="topsidenav">
+          
+        </div>
+          <a class="active" href="/index.html#slideshow-container">Home</a>
+          <a href="/index.html#about-section">About</a>
+          <a href="/add player profile.html">Player Profiles</a>
+          <a href="/index.html#contact">Contact Us</a>
+          <script src="https://kit.fontawesome.com/75cd7c332e.js" crossorigin="anonymous"></script>
+        </div> 
+
+    <!-- font awesome plugin -->
+    <script src="https://kit.fontawesome.com/3285114a98.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <div class="addprocontainer">
-        <div>
-            <i class="fas fa-times exiticon" onclick="createProfile()"></i>
-            <div class="addproform-container">
-                <form class="addproform" method="POST">
-                    <h3>Create Profile</h3>
-                    <table>
-                       
-                        <tr>
-                            <td><input class="linputtext" id="full_name" type ="text" name ="Full_Name" placeholder="Full Name" required></td>
-                        </tr>
-                        <tr>
-                            <td><input class="linputtext" id="nickname" type ="text" name ="nickname" placeholder="Nickname" required></td>
-                        </tr>
-                        <tr>
-                            <td><input class="linputtex" id="date-of-birth" type ="text" name ="date-of-birth" placeholder="date-of-birth" required></td>
-                        </tr>
-                        <tr>
-                            <td><input class="linputtext" id="age" type ="text" name ="age" placeholder="age" required></td>
-                        </tr>
-
-                        <tr>
-                          <td><input class="linputtext" id="position" type ="text" name ="position" placeholder="position" required></td>
-                      </tr>
-
-                      <tr>
-                        <td><input class="linputtext" id="citizenship" type ="text" name ="citizenship" placeholder="citizenship" required></td>
-                    </tr>
-
-                    <tr>
-                      <td><input class="linputtext" id="place-of-birth" type ="text" name ="place-of-birth" placeholder="place of birth" required></td>
-                    </tr>
-
-                    <tr>
-                      <td><input class="linputtext" id="current-club" type ="text" name ="current-club" placeholder="current club" required></td>
-                    </tr>
-
-                    
-                  
-                            <td><input class="linputtext" id="player_image" type ="file" name ="player_image" placeholder="Upload Image" onchange="previewFile()" required></td>
-                        </tr>
-                        <tr>
-                            <td><button onclick="event.preventDefault(), createplayerProfile()" class="linputsubmit">Add Profile</button></td>
-                        </tr>
-                    </table>
-                </form>
-            </div>
-        </div>
-    </div>
+    
     <div class="container">
-        
-        <div class="productscontent">
-            <div class="newproduct" onclick="createplayerProfile()">
-                 
+        <form id="form-container" method="POST" enctype=multipart/form-data>
+            <div class="heading">
+                <h1>Create Profile</h1>
             </div>
-            <div class="productscontainer">
+                <div class="add-profile">
+                <div class="form-group">
+                    <label for="full_name" class="header" class="form-label">Full Name</label>
+                    <input class="form-input" type="text" name="product_name" id="p_name" required placeholder="Product Name">
+                </div>
+                <div class="form-group">
+                    <label for="product_type" class="header" class="form-label">Product Type</label>
+                    <input class="form-input" type="text" name="product_type" id="p_type" required placeholder="Product Type">
+                </div>
+                <div class="form-group">
+                    <label for="product_price" class="header" class="form-label">Product Price</label>
+                    <input class="form-input" type="number" name="product_price" id="p_price" required placeholder="Product Price">
+                </div>
+                <div class="form-group">
+                    <label for="product_description" class="header" class="form-label">Product Description</label>
+                    <input class="form-input" type="text" name="product_description" id="p_description" required placeholder="Product Description">
+                </div>
+                <div class="form-group">
+                    <label for="product_image" class="header" class="form-label">Product Image</label>
+                    <input class="form-input" type="file" name="product_image" id="p_image" required onchange="addImage()">
+                    <img src="" alt="Image Preview" class="imgurl">
+                </div>
+                <button type="submit" class="button" onclick="addProducts(), event.preventDefault()">submit</button>
             </div>
-        </div>
+            </form>
+            <form id="form-container" method=POST enctype=multipart/form-data>
+                <div class="heading">
+                    <h1>Edit Existing Product</h1>
+                </div>
+                    <div class="add-products">
+                        <div class="form-group">
+                            <label for="product_id" class="header" class="form-label">Product ID</label>
+                            <input type="number" class="form-input" name="product_id" id="u_id" required placeholder="Product ID">
+                        </div>
+                    <div class="form-group">
+                        <label for="product_name" class="header" class="form-label">Product Name</label>
+                        <input class="form-input" type="text" name="product_name" id="u_name" required placeholder="Product Name">
+                    </div>
+                    <div class="form-group">
+                        <label for="product_type" class="header" class="form-label">Product Type</label>
+                        <input class="form-input" type="text" name="product_type" id="u_type" required placeholder="Product Type">
+                    </div>
+                    <div class="form-group">
+                        <label for="product_price" class="header" class="form-label">Product Price</label>
+                        <input class="form-input" type="number" name="product_price" id="u_price" required placeholder="Product Price">
+                    </div>
+                    <div class="form-group">
+                        <label for="product_description" class="header" class="form-label">Product Description</label>
+                        <input class="form-input" type="text" name="product_description" id="u_description" required placeholder="Product Description">
+                    </div>
+                    <div class="form-group">
+                        <label for="product_image" class="header" class="form-label">Product Image</label>
+                        <input class="form-input" type="file" name="product_image" id="u_image" required onchange="addImage()">
+                        <img src="" alt="Image Preview" class="imgurl">
+                    </div>
+                    <button type="submit" onclick="updateProducts(), event.preventDefault()" class="button" id="submit">Update</button>
+                </div>
+                </form>
+        <form id="form-container" method=POST enctype=multipart/form-data>
+            <div class="heading">
+                <h1>Delete Existing Product</h1>
+            </div>
+                <div class="form-group">
+                    <label for="product_id" class="header" class="form-label">Products ID</label>
+                    <input type="text" name="product_id" id="id" required placeholder="Product ID" class="form-input">
+                </div>
+                <button type="submit" class="button" id="delete" onclick="deleteProduct(), event.preventDefault()">Delete</button>
+        </form>
     </div>
-    <img src="" alt="image-preview" class="imageup">
-    <script src="/create profile.js"></script>
-    <script src="https://kit.fontawesome.com/1e2396cf96.js" crossorigin="anonymous"></script>
+       
+    <script src="./src/add-product.js"></script>
+    <script src="./src/edit-product.js"></script>
+    <script src="./src/delete-product.js"></script>
+    <script src="./src/logout.js"></script>
 </body>
 </html>
