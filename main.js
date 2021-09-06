@@ -18,3 +18,11 @@ function showSlides() {
   dots[slideIndex-1].className += " active";
   setTimeout(showSlides, 8000); // Change image every 8 seconds
 }
+
+
+document.querySelector('#contact-form').addEventListener('submit', (e) => {
+  e.preventDefault();
+  e.target.elements.name.value = '';
+  e.target.elements.email.value = '';
+  e.target.elements.message.value = '';
+});

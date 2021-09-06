@@ -19,8 +19,8 @@
             <div class="inner-box">
                 <div class="card-front">
                     <h2>Register</h2>
-                    <form >
-                        <input name="first_name" id="first_name" type="text" class="input-box" placeholder="First Name" required="">
+                    <form  action="http://127.0.0.1:5000/player_reg/" method="POST">
+                        <input name="first_name" id="first_name" type="text" class="input-box" placeholder="First Name" required autofocus="">
                         <input name="last_name" id="last_name" type="text" class="input-box" placeholder="Last Name" required>
                         <input name="email" id="email" type="email"  class="input-box" placeholder="Email" required>
                         <input name="username" id="username" type="text" class="input-box" placeholder="Username" required>
@@ -31,7 +31,7 @@
                         <a href="/login.html">
                         <button
                         class="button"
-                        type="button"
+                        type="submit"
                       >
                         Register
                       </button>  
@@ -44,5 +44,18 @@
         </div>
     </div>
     <!--<script src="/register.js"></script>-->
+    <script>
+        function toggleSignUp(e) {
+          e.preventDefault();
+          $("#logreg-forms .form-signin").toggle(); // display:block or none
+          $("#logreg-forms .form-signup").toggle(); // display:block or none
+        }
+        
+        $(() => {
+          // Login Register Form
+          
+          $("#logreg-forms #btn-signup").click(toggleSignUp);
+          $("#logreg-forms #cancel_signup").click(toggleSignUp);
+        });</script>
 </body>
 </html>
