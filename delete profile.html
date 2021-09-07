@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delete Profile</title><div class="topnav">
+        <div class="topsidenav">
+         
+        </div>
+          <a class="active" href="#slideshow-container">Home</a>
+          <a href="#about-section">About</a>
+          <a href="/add player profile.html">Player Profiles</a>
+          <a href="#contact">Contact Us</a>
+          <script src="https://kit.fontawesome.com/75cd7c332e.js" crossorigin="anonymous"></script>
+        </div> 
+        <link rel="stylesheet" href="/add player profile.css">
+</head>
+<body>
+    <!--Delete-->
+<form id="form-container" method=PUT action="https://immense-coast-90376.herokuapp.com/delete-profile/">
+    <div class="heading">
+        <h1>Delete Player Profile</h1>
+    </div>
+        <div class="form-group">
+            <label for="player_id" class="header" class="form-label"></label>
+            <input type="text" name="player_id" id="player_id" required placeholder="Player Id" class="form-input">
+        </div>
+        <button type="submit" class="button" id="delete" onclick="deleteProfile(), event.preventDefault()">Delete</button>
+</form>
+
+
+<script src="/delete player profile.js"></script>
+</body>
+</html>

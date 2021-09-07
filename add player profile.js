@@ -29,6 +29,7 @@ function showplayers(products) {
         <h5 class = "place_of_birth"> ${product.place_of_birth}</h5>
         <h5 class = "current_club"> ${product.current_club}</h5>
         <button onclick="addPlayer(${product.player_id})"> Add Player</button>
+
         </div>
     </div>
     `;
@@ -113,37 +114,6 @@ function toggleCart() {
   document.querySelector("#cart").classList.toggle("active");
 }
 
-// Fucntion to delete profiles //
-
-function deleteProfile(id1) {
-  let product = products.data.find((item) => {
-    return item.player_id == id1;
-  });
-  let prod_id = product.player_id;
-  console.log(prod_id);
-
-  fetch("https://immense-coast-90376.herokuapp.com/delete-profile/", {
-    method: "PUT",
-    body: JSON.stringify({
-      id: prod_id,
-    }),
-    headers: {
-      "Content-type": "application/json",
-    },
-  })
-    .then((response) => response.json())
-    .then((data) => {
-      console.log(data);
-      if (data["message"] == "Profile deleted successfully.") {
-        alert("Deleted succesfully");
-      } else {
-        alert("Profile Not Deleted");
-      }
-    });
-
-  console.log(product);
-  console.log(cart);
-}
 
 // Remove Items from Cart //
 function removePlayer(player_id) {
@@ -157,5 +127,6 @@ function removePlayer(player_id) {
   );
   renderTeam(cart);
 }
+
 
 

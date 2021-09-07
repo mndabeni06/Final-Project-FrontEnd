@@ -1,5 +1,5 @@
 function addProfile() {
-  fetch('http://127.0.0.1:5000/create_profile/', {
+  fetch('https://immense-coast-90376.herokuapp.com/create_profile/', {
       method: 'POST',
       headers: {
           'Content-Type': 'application/json'
@@ -23,7 +23,7 @@ function addProfile() {
 
       if (data['message'] == "Player Profile Added Successfully") {
           alert('You have sucessfully Added A Profile! Please View It On The add player profile Page')
-          window.location.href = './add player profile'
+          window.location.href = './add player profile.html'
       } else {
           alert('Form filled in incorrectly')
       }
