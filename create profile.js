@@ -21,12 +21,12 @@ function addProfile() {
       console.log(data)
       console.log("Profile created successfully")
 
-      if (data['message'] == "Player Profile Added Successfully") {
+    if (data['message'] == "Player Profile Added Successfully") {
           alert('You have sucessfully Added A Profile! Please View It On The add player profile Page')
           window.location.href = './add player profile.html'
-      } else {
+      } /*else {
           alert('Form filled in incorrectly')
-      }
+      }*/
   })
 }
 

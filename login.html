@@ -24,12 +24,12 @@
             <div class="inner-box">
                 <div class="card-front">
                     <h2>Login</h2>
-                    <form>
-                        <input name="username" type="username" class="input-box" placeholder="Username" required>
-                        <input name="password"type="password" class="input-box" placeholder="Password" required>
+                    <form onsubmit="event.preventDefault(); login(); collect()">
+                        <input name="username" type="username" class="input-box" id="auth_username" placeholder="Username" required>
+                        <input name="password"type="password" class="input-box" id="auth_password" placeholder="Password" required>
                         <a href="/index.html"> 
                         <a href="/add player profile.html">
-                        <button type="button"class="submit-btn">Submit</button>
+                        <button type="submit"class="submit-btn">Submit</button>
                         </a>
                         <input type="checkbox"><span>Remember Me</span>
                     </form>
@@ -38,6 +38,6 @@
             </div>
         </div>
     </div>
-    
+    <script src="/login.js"></script>
 </body>
 </html>
