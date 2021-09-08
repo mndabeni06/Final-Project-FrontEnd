@@ -10,10 +10,10 @@ function addProfile() {
           age: document.getElementById('age').value,
           date_of_birth: document.getElementById('date_of_birth').value,
           place_of_birth:document.getElementById('place_of_birth').value,
-          citizenship:document.getElementById('citizeship').value,
+          citizenship:document.getElementById('citizenship').value,
           position:document.getElementById('position').value,
           current_club:document.getElementById('current_club').value,
-          player_image: document.querySelector('image').src
+          image: document.querySelector('.image').src
 
       }),
       mode: 'cors'

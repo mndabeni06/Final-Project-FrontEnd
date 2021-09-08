@@ -3,6 +3,7 @@
   padding: 0;
   font-family: sans-serif;
   box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 
 /* Style the search box inside the navigation bar */
