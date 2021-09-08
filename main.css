@@ -120,7 +120,7 @@ img {vertical-align: middle;}
 #about-section{
   min-height: 100vh;
   margin-top: -15px;
-  background: url(./imgs/messi.jpeg) ;
+  background: url(./imgs/gifmessi.gif) ;
   background-repeat: no-repeat;
   background-size: 65%;
   background-color: #009A17  ;
@@ -129,6 +129,8 @@ img {vertical-align: middle;}
   padding: 100px 0px;
 
 }
+
+
 
 .here-text{
   text-decoration: none;

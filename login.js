@@ -1,5 +1,5 @@
 const user = window.localStorage;
-function login() {
+function login(){
     fetch("https://immense-coast-90376.herokuapp.com/auth", {
       method: "POST",
       body: JSON.stringify({
@@ -13,8 +13,8 @@ function login() {
       .then((response) => response.json())
       .then((data) => {
         console.log(data);
-        if (data["description"] == "Invalid credentials") {
-          alert("invalid cedentials")
+    if (data["message"] == "New player has been successfully added to database") {
+          alert("Player added")
           window.location.href = "./add player profile.html";
           
           
@@ -23,12 +23,15 @@ function login() {
           window.location.href ="./index.html";
         }
       });
-  }
 
-  function collect(){
+}
+    
+
+
+function collect(){
+
     let inputUsername= document.getElementById("auth_username");
      localStorage.setItem("username", inputUsername.value);
     let inputPassword= document.getElementById("auth_password");
      localStorage.setItem("password", inputPassword.value);
-     
   }
