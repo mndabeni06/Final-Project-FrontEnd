@@ -10,7 +10,7 @@ function updateProfile() {
     const citizenship = document.getElementById( 'citizenship').value;
     const current_club = document.getElementById('current_club').value;
     const position = document.getElementById('position').value;
-    const player_image = document.querySelector('image').src;
+    const image = document.getElementById('image').src;
   
     
   
