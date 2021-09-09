@@ -131,7 +131,6 @@ img {vertical-align: middle;}
 }
 
 
-
 .here-text{
   text-decoration: none;
   color: #000;
@@ -493,7 +492,7 @@ hr {
   position: fixed;
   left: 0;
   bottom: 0;
-  width: 300px;
+  width: 100%;
   z-index: 9999;
   background: #040b14;
 }
