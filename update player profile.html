@@ -4,72 +4,71 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Update Player profile</title>
-    <link rel="stylesheet" href="/main.css">
-    
+    <title>Update Player Profile</title>
+    <div class="topsidenav">
+         
+    </div>
+      <a class="active" href="/index.html/#slideshow-container">Home</a>
+      <a href="/index.html#about-section">About</a>
+      <a href="/add player profile.html">Player Profiles</a>
+      <a href="/index.html#contact">Contact Us</a>
+    </div> 
 </head>
 <body>
-
-    <!--Create profile-->
-    <div class="container">
-        <form id="form-container" method="PUT" action="https://immense-coast-90376.herokuapp.com/update_profile">
-            <div class="heading">
-                <h1>Update Player Profile</h1>
-            </div>
-                <div class="add-profile">
-                    <div class="form-group">
-                        <label for="player_id" class="header" class="form-label">Player ID</label>
-                        <input class="form-input" type="text" name="player_id" id="player_id" required placeholder="Player id">
-                    </div>
-
-                <div class="form-group">
-                    <label for="full_name" class="header" class="form-label">Full Name</label>
-                    <input class="form-input" type="text" name="full_name" id="full_name" required placeholder="Full Name">
-                </div>
-                <div class="form-group">
-                    <label for="nickname" class="header" class="form-label">Nickname</label>
-                    <input class="form-input" type="text" name="nickname" id="nickname" required placeholder="Nickname">
-                </div>
-                <div class="form-group">
-                    <label for="age" class="header" class="form-label">Age</label>
-                    <input class="form-input" type="text" name="age" id="age" required placeholder="Age">
-                </div>
-                <div class="form-group">
-                    <label for="date_of_birth" class="header" class="form-label">DOB</label>
-                    <input class="form-input" type="text" name="date_of_birth" id="date_of_birth" required placeholder="Date of birth">
-                </div>
-
-                <div class="form-group">
-                    <label for="place_of_birth" class="header" class="form-label">Place of birth</label>
-                    <input class="form-input" type="text" name="place_of_birth" id="place_of_birth" required placeholder="Place of brith">
-                </div>
-
-                <div class="form-group">
-                    <label for="citizenship" class="header" class="form-label">Citizenship</label>
-                    <input class="form-input" type="text" name="citizenship" id="citizenship" required placeholder="Citizenship">
-                </div>
-
-                <div class="form-group">
-                    <label for="position" class="header" class="form-label">Position</label>
-                    <input class="form-input" type="text" name="position" id="position" required placeholder="Position">
-                </div>
-
-                <div class="form-group">
-                    <label for="current_club" class="header" class="form-label">Current Club</label>
-                    <input class="form-input" type="text" name="current_club" id="current_club" required placeholder="Current Club">
-                </div>
-
-                <div class="form-group">
-                    <label for="player_image" class="header" class="form-label">Player Image</label>
-                    <input class="form-input" type="file" name="image" id="image" required onchange="addImage()">
-                    <img src=""  class="image">
-                </div>
-                <button type="submit" onclick="updateProfile(), event.preventDefault()" class="button" id="submit">Update</button>
-
-            </form>
-
-            <script src="/update player profile.js"></script>
-
     
+    <div id="profile-info">
+		
+	</div>
+    <div class="update-info">
+		<div class="players">
+			<form onsubmit="event.preventDefault(); updateFullname()">
+				<input id="updatefullname"  name="full_name" type="text" placeholder="update Full Name" />
+				<button class="search-btn"  type="submit">Update</button>
+			</form>
+			<form method="PUT" onsubmit="event.preventDefault(); updateNickname()" >
+				<input id="updatenickname" type="text" placeholder="update Nickname" />
+				<button class="search-btn" type="submit">Update</button>
+			</form>
+			<form method="PUT" onsubmit="event.preventDefault(); updateplace_of_birth()" >
+				<input id="updateplace_of_birth" type="text" placeholder="update place of birth" />
+				<button class="search-btn" type="submit">Update</button>
+
+			</form>
+			<form method="PUT" onsubmit="event.preventDefault(); updateage()">
+				<input id="updateage" type="text" placeholder="update age" />
+				<button class="search-btn" type="submit">Update</button>
+			</form>
+			<form method="PUT" onsubmit="event.preventDefault(); updatedate_of_birth()" >
+
+				<input id="updatedate_of_birth" type="text" placeholder="update date of birth" />
+				<button class="search-btn" type="submit">Update</button>
+			</form>
+			<form method="PUT" onsubmit="event.preventDefault(); updatecitizenship()" >
+				<input id="updatecitizenship" type="text" placeholder=" update citizenship" />
+				<button class="search-btn" type="submit">Update</button>
+
+			</form>
+
+            <form method="PUT" onsubmit="event.preventDefault(); updateposition()" >
+				<input id="updateposition" type="text" placeholder=" update position" />
+				<button class="search-btn" type="submit">Update</button>
+
+			</form>
+
+            <form method="PUT" onsubmit="event.preventDefault(); updatecurrent_club()" >
+				<input id="updatecurrent_club" type="text" placeholder=" update current_club" />
+				<button class="search-btn" type="submit">Update</button>
+
+			</form>
+
+            <form method="PUT" onsubmit="event.preventDefault(); updateimage()" >
+				<input id="updateimage" type="text" placeholder=" update image" />
+				<button class="search-btn" type="submit">Update</button>
+
+			</form>
+
+		  </div>
+	</div>
+    <script src="/update player profile.js"></script>
 </body>
 </html>
