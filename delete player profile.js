@@ -16,7 +16,7 @@ function deleteProfile() {
         console.log(data)
         console.log('You Successfully deleted the profile')
   
-        if (data['message'] == 'Profile Deleted Successfully') {
+        if (data['status_code'] == 200) {
             alert('You successfully deleted the profile!')
             window.location.href = '/add player profile.html'
         } 
