@@ -15,7 +15,7 @@ function login(){
         console.log(data);
     if (data["message"] == "New player has been successfully added to database") {
           alert("Player added")
-          window.location.href = "./add player profile.html";
+          window.location.href = "./addplayerprofile.html";
           
           
         } else {
