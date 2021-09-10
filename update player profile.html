@@ -23,7 +23,13 @@
 		<div class="players">
 			<form onsubmit="event.preventDefault(); updateFullname()">
 				<input id="updatefullname"  name="full_name" type="text" placeholder="update Full Name" />
-				<button class="search-btn"  type="submit">Update</button>
+				<div class="form-group">
+					<label for="player_id" class="header" class="form-label"></label>
+					<input type="text" name="player_id" id="player_id" required placeholder="Player Id" class="form-input">
+
+				</div>
+				<button type="submit" class="button" id="update" onclick="updateProfile()", event.preventDefault()">Update</button>
+
 			</form>
 			<form method="PUT" onsubmit="event.preventDefault(); updateNickname()" >
 				<input id="updatenickname" type="text" placeholder="update Nickname" />

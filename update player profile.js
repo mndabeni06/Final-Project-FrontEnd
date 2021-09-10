@@ -1,4 +1,4 @@
-function getPlayer() {
+/*function getPlayer() {
     fetch("https://immense-coast-90376.herokuapp.com/player-info/"+`${localStorage.getItem("password")}`, {
       method: "GET",
       headers: {
@@ -32,12 +32,28 @@ function getPlayer() {
       });
      
 }
-getPlayer();
+getPlayer();*/
 
+function updateProfile() {
+  const player_id = document.getElementById('player_id').value;
+  console.log(player_id)
 
+ /* if (typeof(player_id) === "string") {
+      return alert('Please Use Correct Values to delete profile')
+  }*/
 
+  fetch('https://immense-coast-90376.herokuapp.com/update_profile/' + `${ player_id }`, {
+      method: 'PUT',
+  }).then(res => res.json()).then(data => {
+      console.log(data)
+      console.log('You Successfully updated the profile')
 
-// Updating Player Profiles //
+      if (data['status_code'] == 200) {
+          alert('full_name updated successfully!')
+          window.location.href = '/add player profile.html'
+      } 
+  })
+
 
 function updateFullname(){
   let value = document.querySelector("#updatefullname").value;
@@ -319,3 +335,7 @@ function updateFullname(){
   }
   
   
+}
+
+
+// Updating Player Profiles //
