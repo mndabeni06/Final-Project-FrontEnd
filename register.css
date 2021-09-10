@@ -3,6 +3,7 @@
     padding: 0;
     box-sizing: border-box;
   font-family: sans-serif;
+  background-color: ;
 }
 
 .container{
@@ -14,6 +15,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: #000;
 }
 
 .card{
