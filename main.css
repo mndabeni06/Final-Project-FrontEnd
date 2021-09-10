@@ -123,23 +123,35 @@ img {vertical-align: middle;}
   background: url(./imgs/gifmessi.gif) ;
   background-repeat: no-repeat;
   background-size: 65%;
-  background-color: #009A17  ;
+  background-color:#000;
   box-sizing: border-box;
   overflow: hidden;
   padding: 100px 0px;
 
 }
 
+.about-text{
+  color: white;
+}
+
+.about-us{
+  color: white;
+}
 
 .here-text{
   text-decoration: none;
-  color: #000;
+  color: white;
+}
+
+.here-text:hover{
+  background-color: green;
+  border-radius: 10px;
 }
 
 button:hover{
   padding: 5px;
   margin-right: 20px;
-  background-color: #20d63b;
+  background-color: #009A17;
   transition: all 0.5s;
   cursor: pointer;
   opacity: 1;
@@ -153,7 +165,7 @@ button:hover{
 .inner-container{
   width:55%;
   float: right;
-  background-color: ivory;
+  background-color: #000;
   padding: 150px; 
 }
 
