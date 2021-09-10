@@ -1,3 +1,4 @@
+// Function to addProfile 
 function addProfile() {
   fetch('https://immense-coast-90376.herokuapp.com/create_profile/', {
       method: 'POST',
@@ -30,6 +31,8 @@ function addProfile() {
   })
 }
 
+
+//Function to add image to the created profile
 function addImage() {
   const preview = document.querySelector('.image');
   const file = document.querySelector('input[type=file]').files[0];

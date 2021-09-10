@@ -4,19 +4,25 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Delete Profile</title><div class="topnav">
-        <div class="topsidenav">
-         
+    <title>Delete Profile</title>
+
+
+<!-- ======= Navbar Section ======= -->
+    <div class="topnav">
+        <div class="topsidenav"> 
         </div>
           <a class="active" href="/index.html/#slideshow-container">Home</a>
           <a href="/index.html#about-section">About</a>
           <a href="/add player profile.html">Player Profiles</a>
           <a href="/index.html#contact">Contact Us</a>
         </div> 
+<!--End of Navbar Section-->
         <link rel="stylesheet" href="/add player profile.css">
 </head>
 <body>
-    <!--Delete-->
+
+
+     <!-- ======= Delete Form ======= -->
 <form id="form-container" method=PUT action="https://immense-coast-90376.herokuapp.com/delete-profile/">
     <div class="heading">
         <h1>Delete Player Profile</h1>
@@ -27,8 +33,11 @@
         </div>
         <button type="submit" class="button" id="delete" onclick="deleteProfile(), event.preventDefault()">Delete</button>
 </form>
+<!--End of delete form-->
 
 
+ <!-- ======= Imported Script ======= -->
 <script src="/delete player profile.js"></script>
+<!--End of imported Script-->
 </body>
 </html>

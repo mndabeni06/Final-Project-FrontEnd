@@ -1,3 +1,5 @@
+// Function for Login
+
 const user = window.localStorage;
 function login(){
     fetch("https://immense-coast-90376.herokuapp.com/auth", {

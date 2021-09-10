@@ -5,6 +5,10 @@
 <link rel="stylesheet" href="/main.css">
 <link rel="stylesheet" href="/main.js">
 <title>Soccer Talent Hub</title>
+
+
+<!-- ======= Navbar ======= -->
+
 <div class="topnav">
   <div class="topsidenav">
     <a href="/register.html">Register</a>
@@ -14,15 +18,16 @@
     <a href="#about-section">About</a>
     <a href="/add player profile.html">Player Profiles</a>
     <a href="#contact">Contact Us</a>
+  <!--End of Navbar-->
+
+    <!-- ======= Extern al Script  ======= -->
     <script src="https://kit.fontawesome.com/75cd7c332e.js" crossorigin="anonymous"></script>
+    <!--End of external Script-->
   </div> 
 </head>
 <body>
-<style>
 
-
-
-</style>
+<!-- ======= Landing Page Section ======= -->
 
 <div id="slideshow-container">
 
@@ -41,19 +46,22 @@
 </div>
 <br>
 
+<!--End of Landing Page Section-->
 
+
+<!-- ======= Hidden Dots ======= -->
 
 <div style="text-align:center">
   <span class="dot"></span> 
   <span class="dot"></span> 
   <span class="dot"></span> 
 </div>
+<!--End of hidden Dots-->
 
 
 
 
-
-
+<!-- ======= About Section ======= -->
 <div id="about-section">
   <div class="inner-container">
     <h1>
@@ -72,6 +80,9 @@
 
   </div>
   </div>
+<!--End of About Section-->
+
+
 <!-- ======= Contact Section ======= -->
 <section id="contact">
   
@@ -121,21 +132,6 @@
 
         </ul>
 
-        <hr>
-      <!-- <ul class="social-media-list">
-          <li><a href="https://github.com/mndabeni06" target="_blank" class="contact-icon">
-            <i class="fa fa-github" aria-hidden="true"></i></a>
-          </li>
-          <li><a href="https://codepen.io/your-work" target="_blank" class="contact-icon">
-            <i class="fa fa-codepen" aria-hidden="true"></i></a>
-          </li>
-        
-          <li><a href="https://www.facebook.com/masimthembe.ndabeni.3/photos_by" target="_blank" class="contact-icon">
-            <i class="fab fa-facebook" aria-hidden="true"></i></i></a>
-          </li>       
-        </ul>--> 
-        <hr>
-
         <div class="copyright">&copy; ALL OF THE RIGHTS RESERVED</div>
 
       </div>
@@ -163,31 +159,11 @@
 
 
 
-<script>
 
-  let slideIndex = 0;
-  showSlides();
-  
-  function showSlides() {
-    let i;
-    let slides = document.getElementsByClassName("mySlides");
-    let dots = document.getElementsByClassName("dot");
-    for (i = 0; i < slides.length; i++) {
-      slides[i].style.display = "none";  
-    }
-    slideIndex++;
-    if (slideIndex > slides.length) {slideIndex = 1}    
-    for (i = 0; i < dots.length; i++) {
-      dots[i].className = dots[i].className.replace(" active", "");
-    }
-    slides[slideIndex-1].style.display = "block";  
-    dots[slideIndex-1].className += " active";
-    setTimeout(showSlides, 4000); // Change image every 4 seconds
-  }
-  </script>
+<!-- ======= Imported Script ======= -->
 
-
-
+<script src="/main.js"></script>
+<!--End of Import Script-->
 
 
 </body>

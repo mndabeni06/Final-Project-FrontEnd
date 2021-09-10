@@ -26,3 +26,21 @@ document.querySelector('#contact-form').addEventListener('submit', (e) => {
   e.target.elements.email.value = '';
   e.target.elements.message.value = '';
 });
+
+
+(function () {
+  "use strict";
+
+/**
+   * Animation on scroll
+   */
+ window.addEventListener("load", () => {
+  AOS.init({
+    duration: 1000,
+    easing: "ease-in-out",
+    once: true,
+    mirror: false,
+  });
+});
+
+})();
