@@ -13,6 +13,7 @@
   flex-wrap: wrap;
   padding: 5% 10%;
   gap: 30px;
+  background-color: #000;
 }
 
 .players-container {
@@ -20,11 +21,11 @@
   display: flex;
   flex-direction: column;
   gap: 15px;
-  background: rgba(200, 201, 240, 0.55);
+  background: rgba(200, 240, 207, 0.55);
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
   border-radius: 10px;
-  border: 1px solid rgba(255, 255, 255, 0.18);
+  border: 1px solid #000;
 }
 
 .image   {
