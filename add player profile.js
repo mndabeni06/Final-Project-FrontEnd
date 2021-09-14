@@ -1,5 +1,6 @@
 let products = [];
 let cart = [];
+let players = [];
 const mystorage = window.localStorage;
 console.log(cart);
 //* Fetching Players from the Api*//
@@ -28,6 +29,7 @@ function showplayers(products) {
         <h5 class = "position"> ${product.position}</h5>
         <h5 class = "place_of_birth"> ${product.place_of_birth}</h5>
         <h5 class = "current_club"> ${product.current_club}</h5>
+        <h5 class = value"> ${product.value}</h5>
         <button onclick="addPlayer(${product.player_id})"> Add Player</button>
 
         </div>
@@ -52,6 +54,7 @@ function renderTeam(cartItems) {
                 <h5 class ="citizenship"> ${cartItem.citizenship}</h5>
                 <h5 class ="place_of_birth"> ${cartItem.place_of_birth}</h5>
                 <h5 class ="current_club"> ${cartItem.current_club}</h5>
+                <h5 class ="playersadded"> ${cartItem.value}</h5>
                 <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Contact Player</button>
                 <button class ="revome_player"onclick="removePlayer(${cartItem.player_id})">Remove Player</button>
                  
@@ -89,6 +92,8 @@ function renderTeam(cartItems) {
       
       `;
     });
+    /*let totalPrice = cartItems.reduce((total, item) => total + item.value , 0);
+    cartContainer.innerHTML += `<h3>Total is: ${totalPrice} </h3>`;*/
    
   } else {
     cartContainer.innerHTML = "<h2> No players in this page</h2>";
@@ -115,7 +120,7 @@ function toggleCart() {
 }
 
 
-// Remove Items from Cart //
+// Remove Items from Team //
 function removePlayer(player_id) {
   let player = products.data.find((item) => {
     return item.player_id == player_id;
@@ -129,4 +134,35 @@ function removePlayer(player_id) {
 }
 
 
+// Search by given criteria //
 
+/*function searchPlayer() {
+  let searchTerm = document.querySelector("#searchTerm").value;
+  console.log(searchTerm);
+  let foundPlayers = players.data.filter((players) =>
+  vehicles  [2].toLowerCase().includes(searchTerm.toLowerCase())
+  );
+  console.log(foundPlayers);
+  let vehicleContainer = document.querySelector(".players-container");
+  playerContainer.innerHTML = "";
+  foundVehicles.forEach((car) => {
+  console.log(player);
+  playerContainer.innerHTML += `
+  <div class = "players-container" ">
+        <img src="${product.image}" class = "image">
+        <div class= "player-content">
+        <h5 class = "full-name"> ${product.full_name}</h5>
+        <h5 class = "nickname"> ${product.nickname}</h5>
+        <h5 class = "date-of-birth"> ${product.date_of_birth}</h5>
+        <h5 class = "age"> ${product.age}</h5>
+        <h5 class = "citizenship"> ${product.citizenship}</h5>
+        <h5 class = "position"> ${product.position}</h5>
+        <h5 class = "place_of_birth"> ${product.place_of_birth}</h5>
+        <h5 class = "current_club"> ${product.current_club}</h5>
+        <button onclick="addPlayer(${product.player_id})"> Add Player</button>
+
+        </div>
+    </div>
+  `;
+  });
+  }*/

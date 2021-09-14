@@ -13,7 +13,7 @@
   flex-wrap: wrap;
   padding: 5% 10%;
   gap: 30px;
-  background-color: #000;
+  background-color:wi;
 }
 
 .players-container {
@@ -243,3 +243,14 @@ hr {
      width: 100%;
   }
 }
+
+/* Search player */
+
+.topnav input[type=text] {
+  padding: 6px;
+  margin-top: 8px;
+  font-size: 17px;
+  border: none;
+
+}
+
