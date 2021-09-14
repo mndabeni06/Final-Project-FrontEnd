@@ -122,11 +122,12 @@ img {vertical-align: middle;}
   margin-top: -15px;
   background: url(./imgs/gifmessi.gif) ;
   background-repeat: no-repeat;
-  background-size: 65%;
+  background-size: 47%;
   background-color:#000;
   box-sizing: border-box;
   overflow: hidden;
   padding: 100px 0px;
+  margin: 10px;
 
 }
 
